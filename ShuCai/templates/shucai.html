@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Made with Thimble</title>
+    <!--<link rel='stylesheet' id='style-css'  href='https://yusi123.com/wp-content/themes/yusi/style.css?ver=1.0' type='text/css' media='all' />-->
+    <link rel="stylesheet" href="static/css/yusi.css">
+  </head>
+  <body>
+    <!--顶部及导航栏-->
+    <header id="header" class="header">
+      <div class="container-inner">
+        <div class="yusi-logo">
+          <a href="/">
+            <h1>
+              <span class="yusi-mono">Dircou</span>
+              <span class="yusi-bloger">&#8211; 分享福利和心得！</span>
+            </h1>
+          </a>
+        </div>
+      </div>
+      <!--导航栏-->
+	  <div id="nav-header" class="navbar">
+        <ul class="nav">
+          <li id="menu-item-3307" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3307"><a href="/">首页</a></li>
+          <li id="menu-item-3300" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-3300"><a href="https://yusi123.com/share">福利</a>
+            <ul class="sub-menu">
+              <li id="menu-item-3301" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3301"><a href="https://yusi123.com/share/free">免费资源</a></li>
+              <li id="menu-item-3302" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3302"><a href="https://yusi123.com/share/funweb">趣站推荐</a></li>
+              <li id="menu-item-3303" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3303"><a href="https://yusi123.com/share/software">软件工具</a></li>
+            </ul>
+          </li>
+          <li id="menu-item-3308" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3308"><a href="https://yusi123.com/guestbook">留言</a></li>
+        </ul>
+      </div>
+    </header>
+    <!--中间内容-->
+    <section class="container">
+      <div class="speedbar">
+      <!--公告栏-->
+	    <div class="toptip">
+          <strong class="text-success">
+            <i class="fa fa-volume-up"></i>
+          </strong> 企业网站，个人博客等WordPress网站开发定制需求请加 QQ 详聊。
+        </div>
+      </div>
+      <!--目录栏-->
+      <div class="content-wrap">
+        <div class="content">
+          <!--目录栏-->
+          <div class="breadcrumbs">
+            <a title="返回首页" href="https://yusi123.com">
+              <i class="fa fa-home"></i>
+            </a>
+            <small>></small> <a href="https://yusi123.com/diary">随笔</a>
+            <small>></small>
+            <span class="muted">聊感</span>
+          </div>
+          <!--内容栏-->
+          <article class="article-content">
+            <div class="aligncenter">
+              <table>
+                <tr>
+                  <td>名　称</td>
+                  <td>最低价</td>
+                  <td>平均价</td>
+                  <td>最高价</td>
+                  <td>日　期</td>
+                </tr>
+                {% for i in datebase %}
+                <tr>
+                    {% for j in i %}
+                        <td>{{ j }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+              </table>
+            </div>
+            <div class="open-message">
+              <i class="fa fa-bullhorn"></i> 如果你觉得这篇文章或者我分享的主题对你有帮助，请支持我继续更新网站和主题 ！
+              <a style="float:right;text-indent: 0;" href="https://yusi123.com/pay" title="捐赠本站" target="_blank">捐赠本站</a>
+            </div>
+          </article>
+        </div>
+      </div>
+        <!--右侧栏-->
+        <aside class="sidebar">
+          <div class="widget widget_text">
+            <div class="textwidget">
+              <div class="social">
+                <a href="https://yusi123.com/go/weibo" rel="external nofollow" title="新浪微博" target="_blank">
+                  <i class="sinaweibo fa fa-weibo"></i>
+                </a>
+                <a  href="https://yusi123.com/go/qqweibo" rel="external nofollow" title="腾讯微博" target="_blank">
+                  <i class="tencentweibo fa fa-tencent-weibo"></i>
+                </a>
+                <a class="weixin">
+                  <i class="weixins fa fa-weixin"></i>
+                  <div class="weixin-popover">
+                    <div class="popover bottom in">
+                      <div class="arrow"></div>
+                      <div class="popover-title">订阅号“欲思”</div>
+                      <div class="popover-content">
+                        <img src="https://yusi123.com/wp-content/themes/yusi/img/weixin.gif" >
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a href="https://yusi123.com/go/email" rel="external nofollow" title="Email" target="_blank">
+                  <i class="email fa fa-envelope-o"></i>
+                </a>
+                <a href="https://yusi123.com/go/add_qq" rel="external nofollow" title="联系QQ" target="_blank">
+                  <i class="qq fa fa-qq"></i>
+                </a>
+                <a href="https://yusi123.com/feed" rel="external nofollow" target="_blank"  title="订阅本站">
+                  <i class="rss fa fa-rss">2</i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="widget d_postlist">
+            <div class="title">
+              <h2>价格搜索</h2>
+            </div>
+            <form action="/date" method="post">
+              <span class="text">名称：<input type="text" name="food_name"></span>
+              <span class="text">起止日期：<input type="date" name="start_date" onclick="new Calendar(2000, 2036).show(this);" maxlength="10" size="15"></span>
+              <span class="muted">结束日期:<input type="date" name="stop_date" /> <input type="submit" name="submits"></span>
+            </form>
+          </div>
+          <div class="widget d_postlist">
+            <div class="title">
+              <h2>价格走势</h2>
+            </div>
+            <a href="/render"><img src="http://www.xinfadi.com.cn/images/jghq.jpg"></a>
+          </div>
+        </aside>
+    </section>
+
+    <!--底部栏-->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="copyright pull-left">
+          <a>底部位置</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
