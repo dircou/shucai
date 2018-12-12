@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>测试1</title>
+</head>
+<body>
+  <div>
+	<p>这是一个插入测试123</p>
+      <p>{{id}}</p>
+  </div>
+<div>
+    <table>
+        <ul>
+            <tr>
+                <td width="80px;">名称</td>
+                <td width="80px;">最低</td>
+                <td width="80px;">平均</td>
+                <td width="80px;">最高</td>
+            </tr>
+
+                    {% if cont %}
+                        {% for i in cont %}
+            <tr>
+                        <td>{{ i['name'] }}</td>
+                        <td>{{ i['low'] }}</td>
+                        <td>{{ i['age'] }}</td>
+                        <td>{{ i['hight'] }}</td>
+            </tr>
+                        {% endfor %}
+                    {% endif %}
+
+
+        </ul>
+    </table>
+    <div>
+        {% for i in range(1,page+1) %}
+            <a href="/new/{{ i }}">{{ i }}</a>
+        {% endfor %}
+    </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <titl>page_list</titl></title>
+</head>
+<body>
+<div class="aligncenter">
+    <table>
+        <tr>
+            <td>名　称</td>
+            <td>最低价</td>
+            <td>平均价</td>
+            <td>最高价</td>
+            <td>日　期</td>
+        </tr>
+        {% for i in datebase %}}
+        <tr>
+            {% for j in i %}
+            <td>{{ j }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
