@@ -2,14 +2,16 @@ import sqlite3
 import os
 import datetime
 
-class db_sql(object):
-    def db_select(self,form):
+class Db_sql(object):
+    def __init__(self,form):
+        self.form = form
+    def db_select(self):
         # 获取提交的表单数据！
         # form = request.form
         # 提取名称、日期
-        food_name = form.get('food_name').strip()
-        start_date = form.get('start_date').strip()
-        stop_date = form.get('stop_date').strip()
+        food_name = self.form.get('food_name').strip()
+        start_date = self.get('start_date').strip()
+        stop_date = self.get('stop_date').strip()
         print(food_name, start_date, stop_date)
         # 如果相关项为空，则进行默认值配置！
         if food_name == '':
